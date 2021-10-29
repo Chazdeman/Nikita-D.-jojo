@@ -5,7 +5,7 @@ print()
 suk=0
 while suk not in [1,2,3]:
     try:
-        suk=int(input("Ты хочешь сыграть с роботом или с другом => ") ) 
+        suk=int(input("Ты хочешь сыграть с роботом или с другом или посмотреть фильм робот с роботом  => ") ) 
     except TypeError:
         print("Можно только 1 и 2!")
 bot=0
@@ -61,40 +61,18 @@ if suk==1:
             elif b == 3:
                  print("Компьютер выбрал бумагу.")
                  print()
-            if c == 1 and b == 1:
-                nic+=1
-                win=0
-            elif c== 1 and b == 2:
-                gamer+=1
-                win=1
-            elif c== 1 and b == 3:
-                bot+=1
-                win=2
-            elif c== 2 and b == 1:
-                bot+=1
-                win=2
-            elif c== 2 and b == 2:
-                nic+=1 
-                win=0
-            elif c== 2 and b == 3:
-                gamer+=1
-                win=1
-            elif c== 3 and b == 1:
-                gamer+=1
-                win=1
-            elif c== 3 and b == 2:
-                bot+=1
-                win=2
-            elif c== 3 and b == 3:
-                win=0
-                nic+=1
+        if b==c:
+            print("Ничья")
             print()
-            if win == 0:
-                print("Ничья, повезёт в след. раз!")
-            elif win == 1:
-                print("Ты Победил, Лучший!")
-            elif win == 2:
-                print("Победил компьютер, как жаль!")
+            nic+=1
+        elif b==1 and c==2 or b==2 and c==3 or b==3 and c==1:
+            gamer+=1
+            print("Выиграл игрок 1")
+            print()
+        elif b==1 and c==3 or b==2 and c==1 or b==3 and c==2:
+            bot+=1
+            print()
+            print("Выиграл Робот")
 if suk==2:
     while True:
         print("Ты хочешь продолжить (Нажми backspace) или закочить (Нажми enter)?")
@@ -148,42 +126,17 @@ if suk==2:
             elif b == 3:
                  print("Игрок 2 выбрал бумагу.")
                  print()
-            if c == 1 and b == 1:
-                nic+=1
-                win=0
-            elif c== 1 and b == 2:
-                gamer+=1
-                win=1
-            elif c== 1 and b == 3:
-                god+=1
-                win=2
-            elif c== 2 and b == 1:
-                god+=1
-                win=2
-            elif c== 2 and b == 2:
-                nic+=1 
-                win=0
-            elif c== 2 and b == 3:
-                gamer+=1
-                win=1
-            elif c== 3 and b == 1:
-                gamer+=1
-                win=1
-            elif c== 3 and b == 2:
-                god+=1
-                win=2
-            elif c== 3 and b == 3:
-                win=0
-                nic+=1
-            if win == 0:
-                print("Ничья, повезёт в след. раз!")
-                print()
-            elif win == 1:
-                print("Победил первый игрок, Лучший!")
-                print()
-            elif win == 2:
-                print("Победил второй игрок, как жаль!")
-                print()
+        if b==c:
+            print("Ничья")
+            print()
+            nic+=1
+        elif b==1 and c==2 or b==2 and c==3 or b==3 and c==1:
+            gamer+=1
+            print("Выиграл игрок 1")
+        elif b==1 and c==3 or b==2 and c==1 or b==3 and c==2:
+            god+=1
+            print()
+            print("Выиграл игрок 2")
 if suk==3:
     while True:
         print("Ты хочешь продолжить смотреть за битвой (Нажми backspace) или закочить (Нажми enter)?")
@@ -236,3 +189,4 @@ if suk==3:
         elif b==1 and g==3 or b==2 and g==1 or b==3 and g==2:
             bot+=1
             print("Выиграл робот 2")
+
