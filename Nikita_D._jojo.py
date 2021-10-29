@@ -3,7 +3,7 @@ from keyboard import *
 print("Давай сыграем в игру выбери: Камень , ножницы или бумагу.")
 print()
 suk=0
-while suk not in [1,2]:
+while suk not in [1,2,3]:
     try:
         suk=int(input("Ты хочешь сыграть с роботом или с другом => ") ) 
     except TypeError:
@@ -184,3 +184,55 @@ if suk==2:
             elif win == 2:
                 print("Победил второй игрок, как жаль!")
                 print()
+if suk==3:
+    while True:
+        print("Ты хочешь продолжить смотреть за битвой (Нажми backspace) или закочить (Нажми enter)?")
+        print()
+        try:
+             if read_key()=="backspace":
+                print()
+                print("Продолжаем просмотр.")
+                print()
+                pass
+        except:
+                ValueError
+        try:
+            if read_key()=="enter":
+                print()
+                print("Спасибо за просмотр!")
+                print()
+                print()
+                print(f"Ничьих было {nic} , Побед у первого робота было {gamer} , Побед у второго робота было {bot}.")
+                break
+        except:
+                ValueError
+        b = randint(1,3)
+        g = randint(1,3)
+        print()
+        if b == 1:
+            print("Робот 1 выбрал камень.")
+            print()
+        elif b == 2:
+            print("Робот 1 выбрал ножницы.")
+            print()
+        elif b == 3:
+            print("Робот 1 выбрал бумагу.")
+            print()
+        if g== 1:
+            print("Робот 2 выбрал камень.")
+            print()
+        elif g == 2:
+            print("Робот 2 выбрал ножницы.")
+            print()
+        elif g == 3:
+            print("Робот 2 выбрал бумагу.")
+            print()
+        if b==g:
+            print("Ничья")
+            nic+=1
+        elif b==1 and g==2 or b==2 and g==3 or b==3 and g==1:
+            gamer+=1
+            print("Выиграл робот 1")
+        elif b==1 and g==3 or b==2 and g==1 or b==3 and g==2:
+            bot+=1
+            print("Выиграл робот 2")
