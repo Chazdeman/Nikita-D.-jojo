@@ -20,7 +20,6 @@ elif b == 2:
         print("Компьютер выбрал ножницы.")
 elif b == 3:
         print("Компьютер выбрал бумагу.")
-print()
 if c == 1 and b == 1:
         win = 0
 elif c== 1 and b == 2:
